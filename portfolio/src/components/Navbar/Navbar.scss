@@ -1,0 +1,122 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #141313;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  & .content {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+
+    @include media(990){
+      padding: 0 20px;
+    }
+  }
+
+  &__logo {
+    color: #fff;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.16;
+
+    @include media(475){
+        font-size: 25px;
+    }
+    @include media(375){
+        font-size: 20px;
+    }
+
+  }
+
+  &__btn {
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 40px;
+    display: none;
+
+    @include media(1050) {
+      display: flex;
+    }
+
+    @include media(475){
+        font-size: 35px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+
+    @include media(1050) {
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      row-gap: 30px;
+      width: 100%;
+      height: 100%;
+      transition: 200ms linear;
+      transform: translateY(-100%);
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+
+      & .navbar__btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+      }
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.94;
+    transition: 0.5s linear;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: solid 3px #92a8d1;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: #fff;
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+    &.router-link-exact-active {
+      color: #fff;
+    }
+  }
+}

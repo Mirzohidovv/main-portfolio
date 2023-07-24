@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin media($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Poppins";
+  font-weight: 400;
+  background: #222;
+  overflow-x: hidden;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 528px;
+    flex-shrink: 0;
+    // margin: 276px 240px;
+    margin-bottom: 200px;
+    margin-top: 200px;
+    margin-left: 240px;
+    margin-right: 240px;
+    column-gap: 82px;
+  }
+
+  &__left-img {
+    width: 328px;
+    height: 328px;
+    border-radius: 528px;
+    background: #444;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.8);
+    border-radius: 491px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-tex {
+      color: rgba(255, 255, 255, 0.5);
+      font-family: Poppins;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 35px;
+    }
+    &-title {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 70px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 35px;
+      padding: 44px 0;
+    }
+
+    &-text {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 35px;
+    }
+
+    &-buttons {
+      display: flex;
+      column-gap: 15px;
+      margin-top: 23px;
+    }
+
+    &-button {
+      display: flex;
+      color: #fff;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75;
+      border-radius: 30px;
+      border: 3px solid #d5d5d5;
+      background: #333;
+      transition: 0.3s linear;
+      padding: 0 47px;
+      height: 50px;
+      align-items: center;
+      &:hover {
+        border: 3px solid #007ced;
+      }
+    }
+  }
+}
